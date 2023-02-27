@@ -10,7 +10,7 @@ bool is_lo_shu_magic_square(int arr[][COLS])
     int main_diag_sum = arr[0][0] + arr[1][1] + arr[2][2];
     // Tính tổng các phần tử trên đường chéo phụ
     int other_diag_sum = arr[0][2] + arr[1][1] + arr[2][0];
-    // Nếu tổng các phần tử trên đường chéo chính và đường chéo phụ không bằng nhau, mảng không phải là Mã Lục Thư Ma Trận
+    // Nếu tổng các phần tử trên đường chéo chính và đường chéo phụ không bằng nhau.
     if (main_diag_sum != other_diag_sum) {
         return false;
     }
@@ -21,7 +21,7 @@ bool is_lo_shu_magic_square(int arr[][COLS])
         for (int j = 0; j < COLS; j++) {
             curr_row_sum += arr[i][j];
         }
-        // Nếu tổng các phần tử trên một hàng khác với tổng các phần tử trên đường chéo chính và đường chéo phụ, mảng không phải là Mã Lục Thư Ma Trận
+        // Nếu tổng các phần tử trên một hàng khác với tổng các phần tử trên đường chéo chính và đường chéo phụ, mảng không phải là ma trận vuông
         if (curr_row_sum != main_diag_sum) {
             return false;
         }
@@ -33,12 +33,12 @@ bool is_lo_shu_magic_square(int arr[][COLS])
         for (int i = 0; i < ROWS; i++) {
             curr_col_sum += arr[i][j];
         }
-        // Nếu tổng các phần tử trên một cột khác với tổng các phần tử trên đường chéo chính và đường chéo phụ, mảng không phải là Mã Lục Thư Ma Trận
+        // Nếu tổng các phần tử trên một cột khác với tổng các phần tử trên đường chéo chính và đường chéo phụ, mảng không phải ma trậ vuông
         if (curr_col_sum != main_diag_sum) {
             return false;
         }
     }
-    // Nếu mảng thỏa mãn các điều kiện trên, mảng là Mã Lục Thư Ma Trận
+    // Nếu mảng thỏa mãn các điều kiện trên, mảng là ma trậ vuông
     return true;
 }
 
@@ -46,11 +46,11 @@ int main()
 {
     // Khởi tạo mảng
     int arr[ROWS][COLS] = { {4, 9, 2}, {3, 5, 7}, {8, 1, 6} };
-    // Kiểm tra xem mảng có phải là Mã Lục Thư Ma Trận hay không
+    // Kiểm tra xem mảng có phải là Mã Lục Thư ma trậ vuông
     if (is_lo_shu_magic_square(arr)) {
-        cout << "Day la Ma Luc Thu Ma Tran\n";
+        cout << "Day la môt ma tran vuong\n";
     } else {
-        cout << "Day khong phai la Ma Luc Thu Ma Tran\n";
+        cout << "Day khong phai la ma tran vuong\n";
     }
     return 0;
 }
